@@ -1,0 +1,35 @@
+{
+  "name": "Diagnosis",
+  "fields": [
+    {
+      "fieldName": "testResult",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "detailedResults",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "ticket",
+      "otherEntityRelationshipName": "diagnosis",
+      "relationshipName": "ticket",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200901094615",
+  "entityTableName": "diagnosis",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "TicketingBatch",
+  "applications": "*",
+  "microserviceName": "TicketingBatch",
+  "enableEntityAudit": true
+}

@@ -1,0 +1,71 @@
+{
+  "name": "KsrsacAddress",
+  "fields": [
+    {
+      "fieldName": "districtCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "districtName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "hobliCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "surveynum",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "talukCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "talukName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "villageCode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "villageName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "hobliName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "message",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "address",
+      "otherEntityRelationshipName": "ksrsacAddress",
+      "relationshipName": "address",
+      "ownerSide": false
+    }
+  ],
+  "changelogDate": "20200901093515",
+  "entityTableName": "ksrsac_address",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "TicketingBatch",
+  "applications": "*",
+  "microserviceName": "TicketingBatch",
+  "enableEntityAudit": true
+}

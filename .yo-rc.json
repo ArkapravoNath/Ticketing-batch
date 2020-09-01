@@ -1,0 +1,43 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.gok.ticketingbatch"
+    },
+    "jhipsterVersion": "6.10.1",
+    "applicationType": "microservice",
+    "baseName": "TicketingBatch",
+    "packageName": "com.gok.ticketingbatch",
+    "packageFolder": "com/gok/ticketingbatch",
+    "serverPort": "8040",
+    "authenticationType": "oauth2",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": true,
+    "jwtSecretKey": "NTMxYzU0Zjc2YzgwZTVhODhhMDM1OGVhNmJjNzJhOWVmOTk1Y2JjOWEwYTQ2ODA5NDFkY2NlMzFiMGI1N2ExMDE2ZDA4Y2I0ZmIwMmNlODM5NGM3MjMxYzUzOTVlNDM2YWUwYTA0YWNjMWZjOGIyZWNkMWJmMTJhYzBkNDU0MWM=",
+    "embeddableLaunchScript": false,
+    "creationTimestamp": 1598947621567,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "blueprints": [],
+    "skipClient": true,
+    "skipUserManagement": true
+  },
+  "generator-jhipster-entity-audit": {
+    "auditFramework": "custom",
+    "auditPage": true,
+    "lastLiquibaseTimestamp": 1598955505000
+  }
+}

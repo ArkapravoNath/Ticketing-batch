@@ -1,0 +1,111 @@
+{
+  "name": "ReportedSymptom",
+  "fields": [
+    {
+      "fieldName": "communicationMode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fever",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "temperatureCaptured",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bloodPressure",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cough",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cold",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "breathlessness",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contactedAnotherPatient",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "visitCrowdedPlace",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "score",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "otcMedicines",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "riskLevel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "anyOtherSymptom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ehrRecordId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "recordCreatedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "dataCapturedFrom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "diarrhea",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lossOfTasteOrSmell",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "soreThroat",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "migrated",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contactedCovidPositiveRelatedPatient",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "patient",
+      "otherEntityRelationshipName": "reportedSymptom",
+      "relationshipName": "patient",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200901093715",
+  "entityTableName": "reported_symptom",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "TicketingBatch",
+  "applications": "*",
+  "microserviceName": "TicketingBatch",
+  "enableEntityAudit": true
+}

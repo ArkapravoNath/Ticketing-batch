@@ -1,0 +1,79 @@
+{
+  "name": "AmbulanceActivity",
+  "fields": [
+    {
+      "fieldName": "ambulanceNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ambulanceType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "driverName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "driverPrimaryTelephoneNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "driverSecondaryTelephoneNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "profession",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "originAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "destinationAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ambulanceDispatchFlag",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "pickupDateTime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "dropDateTime",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "facilityProviderIdRef",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "ambulanceServiceIdRef",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "patientActivity",
+      "otherEntityRelationshipName": "ambulanceActivity",
+      "relationshipName": "patientActivity",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200901094015",
+  "entityTableName": "ambulance_activity",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "TicketingBatch",
+  "applications": "*",
+  "microserviceName": "TicketingBatch",
+  "enableEntityAudit": true
+}

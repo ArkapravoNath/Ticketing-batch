@@ -1,0 +1,142 @@
+{
+  "name": "Person",
+  "fields": [
+    {
+      "fieldName": "firstName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "middleName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "fullName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "gender",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "age",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "dob",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "nationality",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "citizenShip",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "primaryTelephoneNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "secondayTelephoneNo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "occupation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "occupationName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "alternateNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "language",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "locale",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "familyHeadName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "familyHeadRelationship",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "familyAdultCount",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "guardianName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "document",
+      "otherEntityRelationshipName": "person",
+      "relationshipName": "document"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "mobile",
+      "otherEntityRelationshipName": "person",
+      "relationshipName": "mobile"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "address",
+      "otherEntityRelationshipName": "person",
+      "relationshipName": "address"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "relativeContact",
+      "otherEntityRelationshipName": "person",
+      "relationshipName": "relativeContact"
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "medicalPractitioner",
+      "otherEntityRelationshipName": "person",
+      "relationshipName": "medicalPractitioner",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "relativeContact",
+      "otherEntityRelationshipName": "person",
+      "relationshipName": "relativeContact",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200901093015",
+  "entityTableName": "person",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "TicketingBatch",
+  "applications": "*",
+  "microserviceName": "TicketingBatch",
+  "enableEntityAudit": true
+}

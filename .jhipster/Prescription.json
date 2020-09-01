@@ -1,0 +1,68 @@
+{
+  "name": "Prescription",
+  "fields": [
+    {
+      "fieldName": "otcMedsPrescription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "anyOtherPrescription",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "advisoryIssues",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "methodOfCapture",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "referredClinic",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "referredClinicId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prescriptionImage",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "any"
+    },
+    {
+      "fieldName": "prescriptionImageContentType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prescribedById",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "facilityProviderIdRef",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "ticket",
+      "otherEntityRelationshipName": "prescription",
+      "relationshipName": "ticket",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200901094115",
+  "entityTableName": "prescription",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "TicketingBatch",
+  "applications": "*",
+  "microserviceName": "TicketingBatch",
+  "enableEntityAudit": true
+}

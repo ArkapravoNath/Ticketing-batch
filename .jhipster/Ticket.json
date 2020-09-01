@@ -1,0 +1,90 @@
+{
+  "name": "Ticket",
+  "fields": [
+    {
+      "fieldName": "ticketName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "state",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "channel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "category",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "subcategory",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "contactDetails",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mobileNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "patinetIdRef",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "ticketIdRef",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "ticketAction",
+      "otherEntityRelationshipName": "ticket",
+      "relationshipName": "ticketAction"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "prescription",
+      "otherEntityRelationshipName": "ticket",
+      "relationshipName": "prescription"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "diagnosis",
+      "otherEntityRelationshipName": "ticket",
+      "relationshipName": "diagnosis"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "tags",
+      "otherEntityRelationshipName": "ticket",
+      "relationshipName": "tags"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "ticketStatus",
+      "otherEntityRelationshipName": "ticket",
+      "relationshipName": "ticketStatus"
+    }
+  ],
+  "changelogDate": "20200901094215",
+  "entityTableName": "ticket",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "TicketingBatch",
+  "applications": "*",
+  "microserviceName": "TicketingBatch",
+  "enableEntityAudit": true
+}

@@ -1,0 +1,57 @@
+{
+  "name": "PatientActivity",
+  "fields": [
+    {
+      "fieldName": "activityType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "activityRemark",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "riskLevel",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "personIdRef",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "currentAddressIdRef",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "ambulanceActivity",
+      "otherEntityRelationshipName": "patientActivity",
+      "relationshipName": "ambulanceActivity"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "patient",
+      "otherEntityRelationshipName": "patientActivity",
+      "relationshipName": "patient",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200901093915",
+  "entityTableName": "patient_activity",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "TicketingBatch",
+  "applications": "*",
+  "microserviceName": "TicketingBatch",
+  "enableEntityAudit": true
+}

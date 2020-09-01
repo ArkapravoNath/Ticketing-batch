@@ -1,0 +1,133 @@
+{
+  "name": "Address",
+  "fields": [
+    {
+      "fieldName": "type",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "locationType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pincode",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "houseNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "building",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "locality",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "street",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "district",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "taluka",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "gramPanchayat",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "village",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cityOrTown",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ward",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "zone",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "state",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "landmark",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "residenceType",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "assemblyConstituencyNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "pollingBoothNumber",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "latitude",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "longitude",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "locationLinkOnGoogleMap",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "googleAddress",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "text"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "ksrsacAddress",
+      "otherEntityRelationshipName": "address",
+      "relationshipName": "ksrsacAddress",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "person",
+      "otherEntityRelationshipName": "address",
+      "relationshipName": "person",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200901093415",
+  "entityTableName": "address",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "TicketingBatch",
+  "applications": "*",
+  "microserviceName": "TicketingBatch",
+  "enableEntityAudit": true
+}

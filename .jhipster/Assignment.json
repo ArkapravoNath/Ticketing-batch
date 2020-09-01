@@ -1,0 +1,35 @@
+{
+  "name": "Assignment",
+  "fields": [
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "assigneeId",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "ticketAction",
+      "otherEntityRelationshipName": "assignment",
+      "relationshipName": "ticketAction",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200901094415",
+  "entityTableName": "assignment",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "TicketingBatch",
+  "applications": "*",
+  "microserviceName": "TicketingBatch",
+  "enableEntityAudit": true
+}

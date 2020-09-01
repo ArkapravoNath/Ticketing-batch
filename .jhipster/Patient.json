@@ -1,0 +1,78 @@
+{
+  "name": "Patient",
+  "fields": [
+    {
+      "fieldName": "icmrReference",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "statePid",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "districtPid",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "respiratoryComplication",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cardiovascularDisease",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "diabetes",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bloodPressure",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "otherLongTermDesease",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "personIdRef",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "currentAddressIdRef",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "medicalHistory",
+      "otherEntityRelationshipName": "patient",
+      "relationshipName": "medicalHistory"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "patientActivity",
+      "otherEntityRelationshipName": "patient",
+      "relationshipName": "patientActivity"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "reportedSymptom",
+      "otherEntityRelationshipName": "patient",
+      "relationshipName": "reportedSymptom"
+    }
+  ],
+  "changelogDate": "20200901093615",
+  "entityTableName": "patient",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "TicketingBatch",
+  "applications": "*",
+  "microserviceName": "TicketingBatch",
+  "enableEntityAudit": true
+}

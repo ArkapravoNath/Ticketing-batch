@@ -1,0 +1,277 @@
+
+entity MedicalPractitioner{
+	practitionerType String, //Nurse, Doctor, Ayurveda
+	specialty String, //Neurologist, Pulmonologist
+	registrationNumber String, 
+	employmentMode String, //<Gov, Private, Both>
+	qualification String,
+	status String,
+    personIdRef Long
+    category String,
+    position String,
+    whatsappNumber String,
+    email String,
+    language1 String,
+    language2 String,
+    vehicleExist String //or Boolean
+}
+entity PractitionerSchedule{
+typeOfSchedule String, // Doctor, Nurse, Health worker
+startDateTime Instant,
+endDateTime Instant,
+shiftType String,
+status String,
+scheduleDate Instant,
+scheduleStartTime Integer,
+scheduleEndTime Integer
+}
+entity Person{
+    firstName String,
+	middleName String,
+	lastName String,
+    fullName String,	
+	gender String,
+	age String,
+	dob Instant,
+	nationality String,
+	citizenShip String,	
+	primaryTelephoneNo String,  
+	secondayTelephoneNo String,
+occupation String,
+occupationName String,
+alternateNumber String,
+language String,
+locale String,
+	familyHeadName String, // ref from health watch
+	familyHeadRelationship String, // ref from health watch
+	familyAdultCount Long, // ref from containment zone
+	guardianName String, // ref from health watch	
+    status String
+}
+entity Mobile{
+	number String,
+    metadata String
+}
+entity RelativeContact{ // todo change to person reference
+	type String, //primary or secondary 
+	relationshipType String
+}
+entity Document{
+  idType String, //(Passport, Aadhar, DL, Employment, Student)
+  idNumber String,
+  status String
+}
+entity Address {
+    type String, //perment address or present address
+	locationType String, //rural or urban or bbmp
+	pincode String,
+	houseNumber String,
+    building String,
+	locality String,
+	street String,
+	district String,
+	
+	taluka String,// when locationType is rural 
+	gramPanchayat String, // when locationType is rural 
+	village  String,// when locationType is rural 
+	
+	cityOrTown String,// when locationType is urban 
+	ward  String // when locationType is urban 
+	
+	zone String,
+    state String,
+	landmark String,
+	residenceType String , // individual building, apartment, congested houses, slum --- referred from patient geo tagging
+	
+	assemblyConstituencyNumber String,
+    pollingBoothNumber String,
+    
+    latitude String,
+    longitude String,
+   // address TextBlob,
+    
+    locationLinkOnGoogleMap TextBlob,
+	googleAddress TextBlob,  // need to see character limit
+    status String	
+}
+entity KsrsacAddress{
+	districtCode String,
+	districtName String,
+	hobliCode String,
+	surveynum String,
+	talukCode String,
+	talukName String,
+	type String,
+	villageCode String,
+	villageName String,
+	hobliName String,
+	message String,
+	surveynum String
+}
+
+relationship OneToMany { 
+  Person to Document,
+  Person to Mobile,
+  Person to Address,
+  Person to RelativeContact,
+  RelativeContact to Person,
+  MedicalPractitioner to PractitionerSchedule
+}
+relationship OneToOne {  
+   Address to KsrsacAddress,
+   MedicalPractitioner to Person
+}
+   
+//-----------transactional data-----------
+
+entity Patient{   
+	icmrReference String, //ICMR
+	statePid   String, //211708
+	districtPid String, //BU-00011
+	respiratoryComplication String, // long term disease
+    cardiovascularDisease String,
+    diabetes String,    
+    bloodPressure String,
+	otherLongTermDesease String, // array
+	
+	personIdRef Long,
+	currentAddressIdRef Long
+}
+entity ReportedSymptom{	
+    communicationMode String, // over phone or survey
+	fever String,
+    temperatureCaptured String,
+    bloodPressure String,
+    cough String,
+    cold String,
+    breathlessness String,
+    contactedAnotherPatient String,
+    visitCrowdedPlace String,
+    score String,
+    otcMedicines String,
+    riskLevel String,	
+
+	anyOtherSymptom String, // 
+	ehrRecordId String,
+	recordCreatedDate Instant,
+    dataCapturedFrom String // app name
+	
+  diarrhea String,
+  lossOfTasteOrSmell String,
+  soreThroat String,
+  migrated String,
+  contactedCovidPositiveRelatedPatient String
+}
+entity MedicalHistory{
+	metadata String,
+    cancer String,
+    tbOrHiv String,
+    renalProblem String
+}
+entity PatientActivity {
+	activityType String , // Health watch, containment watch, quarantine watch, travel
+	activityRemark String, //watchin, watchout	
+	status String,
+	riskLevel  String, 
+	personIdRef Long,
+	currentAddressIdRef Long
+}
+entity AmbulanceActivity{
+    ambulanceNumber String,
+	ambulanceType String, //(covid 19 specific) 
+	driverName String,
+    driverPrimaryTelephoneNo String,
+    driverSecondaryTelephoneNo String,
+	profession String,
+	originAddress  String, //json data
+	destinationAddress String, //json data
+    ambulanceDispatchFlag Boolean,
+    pickupDateTime Instant,
+    dropDateTime Instant,
+	facilityProviderIdRef Long,
+	ambulanceServiceIdRef Long
+}
+entity Prescription{
+	otcMedsPrescription String,
+    anyOtherPrescription String,
+    advisoryIssues String,
+    methodOfCapture String,
+    referredClinic String,
+    referredClinicId String,
+    prescriptionImage Blob, // binary image
+    prescriptionImageContentType String,
+    prescribedById String // DoctorIDref
+    facilityProviderIdRef Long // for fever clinic
+}
+entity Ticket{
+	ticketName String,
+    status String,
+    state String,
+    channel String,
+    category String,
+    subcategory String,
+	contactDetails String, //JSON
+    mobileNumber String,
+    patinetIdRef Long,
+    ticketIdRef Long //self reference
+}
+entity TicketAction{
+	actionName String,
+    status String,
+	actions String,
+	actionTakenByRef Long,
+    category String,
+    subcategory String,
+    idleTime Integer,
+    idleTimeMeasureType String,
+    comment String,
+    closureStatus String
+}
+entity Assignment{
+	status String,
+	assigneeId String
+}
+entity TicketStatus{ // like ahd ticket
+	status String, // open, closed, transfer
+    comments String
+    //modifiedBy String, //from audit
+    //modifiedOn String, //from audit
+    //createdOn String, //from audit
+    //createdBy String, //from audit
+    assigneeIdRef Long //assigneeDetails can be taken from TicketAction -> Assignment 
+}
+entity Diagnosis{
+	testResult Boolean,
+    detailedResults String
+}
+entity Tags{
+	tagName String,
+    tagValue String,
+    healthConditionTag String,
+    covidPositiveTag String,
+    followUpTag String,
+    treatmentTag String,
+    metadata String
+}
+relationship OneToMany { 
+  Ticket to TicketAction,
+  Ticket to Prescription,
+  Ticket to Diagnosis,
+  Ticket to Tags,
+  Ticket to TicketStatus,
+  TicketAction to Assignment,
+  Patient to MedicalHistory,
+  Patient to PatientActivity,
+  Patient to ReportedSymptom,
+  PatientActivity to AmbulanceActivity
+}
+
+
+
+
+
+// Set pagination options
+paginate all with pagination
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+service all with serviceImpl

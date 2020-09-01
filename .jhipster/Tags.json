@@ -1,0 +1,55 @@
+{
+  "name": "Tags",
+  "fields": [
+    {
+      "fieldName": "tagName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tagValue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "healthConditionTag",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "covidPositiveTag",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "followUpTag",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "treatmentTag",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "metadata",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "ticket",
+      "otherEntityRelationshipName": "tags",
+      "relationshipName": "ticket",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20200901094715",
+  "entityTableName": "tags",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "TicketingBatch",
+  "applications": "*",
+  "microserviceName": "TicketingBatch",
+  "enableEntityAudit": true
+}
